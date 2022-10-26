@@ -1,0 +1,178 @@
+* {
+	margin: 0;
+	
+	/* box-sizing informs browser how to calculate page width*/
+	/* border-box: width and height properties (and min/max properties) includes content, padding and border */
+	/* content-box: The width and height properties (and min/max properties) includes only the content. Border and padding are not included*/
+	box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+	/* The display property specifies the display behavior (the type of rendering box) of an element. */
+	/* The flex property sets the flexible length on flexible items */
+	/* display: - flexDisplays an element as a block-level flex container */
+	display: flex;
+	flex-direction: column;
+	/* set element minimum height to 100% viewport height */
+	/* Adopts height to viewport */
+	min-height: 100vh;
+	color: rgb(227, 67, 67);
+	background-color:#374151;
+}
+
+header {
+	/* the rem unit means "The root element's font-size"  */
+	padding: 2rem 1rem;
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+h1{ 
+	font-size: 3rem;
+    font-style: normal;
+	font-weight: 300;
+	color: whitesmoke;
+	margin-bottom: 1rem;
+    text-align: center;
+}
+
+.new_task_form {
+	display: flex;
+}
+
+input, button {
+	appearance: none;
+	border: none;
+	outline: none;
+	background: none;
+}
+
+.task_input {
+	flex: 1 1 0%;
+	background-color: lightgoldenrodyellow;
+	padding: 1rem;
+	border-radius: 2rem;
+	margin-right: 1rem;
+	font-size: 1.25rem;
+}
+
+/* A CSS pseudo-element is used to style specified parts of an element. */
+/* Style the first letter, or line, of an element */
+/* Insert content before, or after, the content of an element */
+
+
+.task_input::placeholder {
+	color: brown;
+}
+
+.task_add {
+	color:whitesmoke;
+    width: 100px;
+	font-size: 1rem;
+	font-weight: 600;
+    background-color: #3486f8;
+    border-radius: 1.1rem;
+	cursor: pointer;
+	transition: 0.4s;
+}
+
+/* A pseudo-class is used to define a special state of an element. */
+/* - Style an element when a user mouses over it */
+/* - Style visited and unvisited links differently */
+/* - Style an element when it gets focus */
+.task_add:hover {
+	opacity: 0.8;
+}
+
+.task_add:active {
+	opacity: 0.5;
+}
+
+main {
+	/* flex sets flexible size on flexible elements*/
+	/*Auto: 1 1 Auto*/
+	/*Initial: 0 1 Auto*/
+	/*None: 0 0 Auto*/
+	flex: 1 1 0%; /*grow shrink basic*/
+	max-width: 800px;
+	width: 100%;
+	/*Margin 0 (top & bottom), auto (right & left)*/
+	margin: 0 auto;
+}
+
+.task-list {
+	padding: 1rem;
+}
+
+.task_list > h2 {
+	font-size: 1.5rem;
+	font-weight: 300;
+	color: whitesmoke;
+	margin-bottom: 1rem;
+}
+
+.task {
+	display: flex;
+	/* The justify-content property aligns the flexible container's items when the items do not use all available space on the main-axis (horizontally) */
+	/* Items will have space between them */
+	justify-content: space-between;
+	background-color: lightgoldenrodyellow;
+	padding: 1rem;
+	border-radius: 1rem;
+	margin-bottom: 1rem;
+}
+
+.task .content {
+	flex: 1 1 0%;
+}
+
+.task .content .text {
+	color: black;
+	font-size: 1.125rem;
+	width: 100%;
+	display: block;
+	transition: 0.4s;
+}
+/* 
+.task .content .text:not(:read-only) {
+	color: var(--pink);
+} */
+
+.task .actions {
+	display: flex;
+	margin: 0 -0.5rem;
+}
+
+.task .actions button {
+	cursor: pointer;
+	margin: 0 0.5rem;
+	font-size: 1.125rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	transition: 0.4s;
+}
+
+.task .actions button:hover {
+	opacity: 0.8;
+}
+
+.task .actions button:active {
+	opacity: 0.6;
+}
+
+/* We can divide CSS selectors into five categories: */
+
+/* Simple selectors (select elements based on name, id, class) */
+/* Combinator selectors (select elements based on a specific relationship between them) */
+/* Pseudo-class selectors (select elements based on a certain state) */
+/* Pseudo-elements selectors (select and style a part of an element) */
+/* Attribute selectors (select elements based on an attribute or attribute value) */
+.task .actions .edit {
+	color: #3486f8;
+}
+
+.task .actions .delete {
+	color: red;
+}

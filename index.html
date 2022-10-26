@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My CRUD Task List</title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+	<header>
+		<h1 class="task_list_main">My Task Planner</h1>
+		<form onsubmit= "return validate()" name="task_form" id="new-task-form" class="new_task_form" onsubmit="return emptyValidation()" required>
+			<input type="text" name="new_task_input" class="task_input" id="new-task-input"
+				placeholder="What do you have planned?" />	
+
+
+			<input type="submit" id="new-task-submit" class="task_add" value="Add Task" />
+		</form>
+	</header>
+
+	<script type ="text/javascript">
+		function validate()
+		{var text = document.getElementById("new-task-input");
+	
+		if (text.value.trim() == "")
+		{
+			alert("Please enter a task");
+			return false;
+		}
+		else
+		{
+			 return true;
+		}
+	}
+	</script>
+	
+	<main>
+		<section class="task_list">
+			<h2 class="task_list_header">My Current Tasks</h2>
+			<div id="tasks" class="tasks">
+			</div>
+		</section>
+	</main>
+
+	<script src="script.js"></script>
+</body>
+
+</html>
